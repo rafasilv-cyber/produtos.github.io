@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\Turma2\xampp\htdocs\produtos.github.io\app\Model\UsuarioModel.php'
+require_once __DIR__ . '/../Model/UsuarioModel.php';
 
 class UsuarioController {
     private $usuarioModel;
