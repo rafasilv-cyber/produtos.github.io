@@ -23,8 +23,8 @@
 <input type="button" value="Voltar" onclick="window.location.href='../../index.php'">
 <?php
 
-require_once "C:/Turma1/xampp/htdocs/produtos.github.io/app/DB/DataBase.php";
-require_once "C:/Turma1/xampp/htdocs/produtos.github.io/app/Controller/UsuarioController.php";
+require_once "C:/Turma2/xampp/htdocs/produtos.github.io/app/DB/DataBase.php";
+require_once "C:/Turma2/xampp/htdocs/produtos.github.io/app/Controller/UsuarioController.php";
 
 
 
