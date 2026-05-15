@@ -1,5 +1,15 @@
 <?php
+// 1. INICIA A SESSÃO (Sempre a primeira linha!)
+session_start();
 
+// 2. BLOQUEIO DE SEGURANÇA
+// Se o usuário não estiver logado, manda ele para a tela de login e para a execução da página.
+if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true) {
+    header("Location: /produtos.github.io/app/View/Usuario/login.php");
+    exit;
+}
+
+// 3. CARREGA AS DEPENDÊNCIAS DO SISTEMA
 require_once "DB/DataBase.php";
 require_once "Controller/UsuarioController.php";
 
@@ -12,16 +22,18 @@ $usuarios = $usuarioController->listar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Info</title> <link rel="stylesheet" href="style.css">
+    <title>Your Info</title> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-<header>
+    <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
+                <li><a href="/produtos.github.io/app/View/Usuario/logout.php" style="color: red;">Sair</a></li>
             </ul>
         </nav>
     </header>
